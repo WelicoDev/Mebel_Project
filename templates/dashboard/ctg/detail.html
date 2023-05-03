@@ -1,0 +1,70 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+
+<div class="content">
+     <div class="container-fluid">
+         <div class="row">
+             <div class="col-md-12">
+                 <div class="card">
+                     <div class="card-header">
+                         <h4 class="card-title">All Category </h4>
+                         <p class="category">All Category List table</p>
+                     </div>
+                     <div class="card-content table-responsive table-full-width">
+                         <table class="table">
+                             <thead>
+                                 <tr>
+                                   <th>Key</th>
+                                     <th>Value</th>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                 <tr>
+                                     <td >Id</td>
+                                     <td>{{ ctg.id }}</td>
+                                 </tr>
+                                 <tr>
+                                   <td >Content</td>
+                                   <td>{{ ctg.content }}</td>
+                               </tr>
+                               <tr>
+                                   <td >Slug</td>
+                                   <td>{{ ctg.slug }}</td>
+                               </tr>
+                               <tr>
+                                   <td >Image</td>
+                                   <td>{{ ctg.img.url  }}</td>
+                               </tr>
+                               <tr>
+                                <td >Image</td>
+                                <td><img src="{{ ctg.img.url }}" alt="image" style = "width: 640px; height: 360px;"></td>
+                            </tr>
+                             </tbody>
+                         </table>
+                     </div>
+                 </div>
+                 <button type="button" class="btn btn-wd btn-success">
+                    <span class="btn-label">
+                        <i class="ti-pencil-alt"></i>
+                    </span>
+                    Edit
+                </button>
+                <button type="button" class="btn btn-wd btn-danger btn-rotate">
+                    <span class="btn-label">
+                        <i class="ti-trash"></i>
+                    </span>
+                    Delete
+                </button>
+                <button type="button" class="btn btn-wd btn-default btn-fill btn-move-left">
+                    <span class="btn-label">
+                        <i class="ti-angle-left"></i>
+                    </span>
+                    Back
+                </button>
+          </div>
+     </div>
+ </div>
+
+
+{% endblock %}

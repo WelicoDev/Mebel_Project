@@ -1,0 +1,49 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+
+     <div class="content">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="card">
+                          <div class="card-header">
+                              <h4 class="card-title">All Category </h4>
+                              <p class="category">All Category List table</p>
+                          </div>
+                          <div class="card-content table-responsive table-full-width">
+                              <table class="table">
+                                  <thead>
+                                      <tr>
+                                        <th class="text-center">N*</th>
+                                          <th>Content</th>
+                                          <th class="">Actions</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                    {% for i in ctgs %}
+                                      <tr>
+                                          <td class="text-center">{{ forloop.counter }}</td>
+                                          <td>{{ i.content }}</td>
+                                          <td class="td-actions">
+                                              <a href="{% url 'ctg_detail' pk=i.id %}" rel="tooltip" title="View Category" class="btn btn-info btn-simple btn-xs">
+                                                  <i class="ti-user"></i>
+                                              </a>
+                                              <a href="{% url 'ctg_edit' pk=i.id %}" rel="tooltip" title="Edit Category" class="btn btn-success btn-simple btn-xs">
+                                                  <i class="ti-pencil-alt"></i>
+                                              </a>
+                                              <a href="{% url 'ctg_delete' pk=i.id %}" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                                  <i class="ti-close"></i>
+                                              </a>
+                                          </td>
+                                      </tr>
+                                      {% endfor %}
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+               </div>
+          </div>
+      </div>
+
+{% endblock %}

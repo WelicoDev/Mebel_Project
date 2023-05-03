@@ -1,0 +1,192 @@
+{% extends 'site/base.html' %}
+{% block content %}
+
+{% load static %}
+	<div id="wrapper">
+		{% include 'site/partials/header.html' %}
+		<section class="main">
+			<div class="holder">
+				<div class="title-line">
+					<h2 class="title-min">Mahsulotni taqqoslash <span>(2 tovar)</span></h2>
+					<a href="" class="title-link">Hammasini o'chirish</a>
+				</div>
+				<div class="compare-controls">
+					<div class="compare-radio">
+						<div class="radio-list">
+							<div class="radio-item">
+								<input type="radio" name="delivery" class="radio-input" id="d1" checked>
+								<label for="d1" class="radio-label">Barcha xususiyatlar</label>
+							</div>
+							<div class="radio-item">
+								<input type="radio" name="delivery" class="radio-input" id="d2">
+								<label for="d2" class="radio-label">Farqlar</label>
+							</div>
+						</div>
+					</div>
+					<div class="compare-arrows">
+						<a href="" class="compare-prev slick-arrow"></a>
+						<a href="" class="compare-next slick-arrow"></a>
+					</div>
+				</div>
+				<div class="compare-slider">
+					<div class="compare-slide">
+						<div class="compare-top">
+							<a href="" class="compare-delete">Oʻchirish</a>
+							<div class="compare-category">Divan</div>
+						</div>
+						<div class="compare-name"><a href="">Martin</a></div>
+						<div class="compare-img"><img src="{% static 'images/media/c1.jpg' %}" alt=""></div>
+						<ul class="compare-info">
+							<li><b>Narxi </b> <span class="compare-price"><span>7 250</span>S</span></li>
+							<li><b>Rangi</b> Pushti</li>
+							<li><b>pardozlash materiallari</b> Yaltiroq, ekologik charm</li>
+							<li><b>To'ldirish</b> Paxta</li>
+							<li><b>O'lchamlari</b>
+								<div class="compare-size">
+									<div class="compare-size-item">Uzunlik <br>233sm</div>
+									<div class="compare-size-item">Kenglik <br>107sm</div>
+									<div class="compare-size-item">Balandlik <br>90sm</div>
+								</div>
+							</li>
+							<li><b>Спальное место </b>
+								<div class="compare-size">
+									<div class="compare-size-item">Uzunlik  <br>233sm</div>
+									<div class="compare-size-item">Kenglik  <br>107sm</div>
+									<div class="compare-size-item">Balandlik <br>90sm</div>
+								</div>
+							</li>
+							<li><b>usb zaryadlovchi</b> -</li>
+							<li><b>o'rindiqlar soni</b> 2</li>
+							<li><b>Dekorativ yostiqlar</b> -</li>
+							<li><b>zig'ir qutisi</b> -</li>
+							<li><b>Konfiguratsiya</b> -</li>
+							<li><b>Eshik kengligi</b> 70</li>
+							<li><b>Mexanik</b> mexanikasi yo'q</li>
+							<li><b>Oyoq materiali</b> Yong'oq, qarag'ay</li>
+							<li><b>Uxlash divani</b> -</li>
+							<li><b>Transportkali</b> -</li>
+							<li><b>O'rindiq</b>
+								<div class="compare-size">
+									<div class="compare-size-item">Uzunlik  <br>57sm</div>
+									<div class="compare-size-item">Kenglik   <br>46sm</div>
+									<div class="compare-size-item">Balandlik <br>130sm</div>
+								</div>
+							</li>
+							<li><b>Yostiqni to'ldirish</b> -</li>
+							<li><b>To'ldirish</b> bog'liq bahor bloki</li>
+						</ul>
+						<div class="compare-button">
+							<a href="" class="button button-white"><span class="button-wrap">Savatchaga qo'shish</span></a>
+						</div>
+						<a href="" class="compare-ask">Ushbu model haqida savol bering</a>
+					</div>
+				</div>
+
+				<div class="product-section">
+					<h2 class="title">Madeira seriyasidagi boshqa divanlar</h2>
+					<div class="catalog-slider">
+						<div class="catalog-slide">
+							<div class="catalog-item">
+								<div class="catalog-inner">
+									<div class="catalog-icons">
+										<a href="" class="catalog-up"></a>
+										<a href="" class="catalog-fav"></a>
+									</div>
+									<div class="catalog-img">
+										<div class="catalog-img-slide"><a href=""><img src="{% static 'images/media/c1.jpg' %}" alt=""></a></div>
+										<div class="catalog-img-slide"><a href=""><img src="{% static 'images/media/c2.jpg' %}" alt=""></a></div>
+									</div>
+									<div class="catalog-category"><a href="">Еврокнижка</a></div>
+									<div class="catalog-name"><a href="">Фиджи</a></div>
+									<div class="catalog-price">5 500 ₽</div>
+									<div class="catalog-hidden">
+										<div class="catalog-buttons">
+											<a href="" class="button-min">Купить</a>
+											<a href="" class="button-min button-light">в корзину</a>
+										</div>
+										<div class="catalog-size">
+											<div class="size-title">Габаритные размеры</div>
+											<div class="size-line">
+												<div class="size-item">Длина <br>233см</div>
+												<div class="size-item">Ширина <br>107см</div>
+												<div class="size-item">Высота <br>90см</div>
+											</div>
+										</div>
+										<div class="catalog-size">
+											<div class="size-title">Спальное место</div>
+											<div class="size-line">
+												<div class="size-item">Длина <br>233см</div>
+												<div class="size-item">Ширина <br>107см</div>
+												<div class="size-item">Высота <br>90см</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="product-section">
+					<h2 class="title">Madeyra seriyasining boshqa mahsulotlari</h2>
+					<div class="catalog-slider">
+						<div class="catalog-slide">
+							<div class="catalog-item">
+								<div class="catalog-inner">
+									<div class="catalog-icons">
+										<a href="" class="catalog-up"></a>
+										<a href="" class="catalog-fav"></a>
+									</div>
+									<div class="catalog-img">
+										<div class="catalog-img-slide"><a href=""><img src="{% static 'images/media/c1.jpg' %}" alt=""></a></div>
+										<div class="catalog-img-slide"><a href=""><img src="{% static 'images/media/c2.jpg' %}" alt=""></a></div>
+									</div>
+									<div class="catalog-category"><a href="">Еврокнижка</a></div>
+									<div class="catalog-name"><a href="">Фиджи</a></div>
+									<div class="catalog-price">5 500 ₽</div>
+									<div class="catalog-hidden">
+										<div class="catalog-buttons">
+											<a href="" class="button-min">Купить</a>
+											<a href="" class="button-min button-light">в корзину</a>
+										</div>
+										<div class="catalog-size">
+											<div class="size-title">Габаритные размеры</div>
+											<div class="size-line">
+												<div class="size-item">Длина <br>233см</div>
+												<div class="size-item">Ширина <br>107см</div>
+												<div class="size-item">Высота <br>90см</div>
+											</div>
+										</div>
+										<div class="catalog-size">
+											<div class="size-title">Спальное место</div>
+											<div class="size-line">
+												<div class="size-item">Длина <br>233см</div>
+												<div class="size-item">Ширина <br>107см</div>
+												<div class="size-item">Высота <br>90см</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="bottom">
+			<div class="holder">
+				<div class="bottom-block">
+					<div class="bottom-col">
+						<div class="bottom-text">Не можете определиться с моделью?</div>
+						<div class="bottom-title">Свяжитесь с нами</div>
+					</div>
+					<div class="bottom-col">
+						<div class="bottom-phone"><a href="tel:+998942755638">998 94 275 56 38</a></div>
+						<div class="bottom-text">Мы работаем ежедневно с 9<sup>00</sup> до 20<sup>00</sup></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		{% include 'site/partials/footer.html' %}
+	</div>
+
+{% endblock %}

@@ -1,0 +1,131 @@
+{% extends 'site/base.html' %}
+{% block content %}
+
+{% load static %}
+	<div id="wrapper">
+		{% include 'site/partials/header.html' %}
+		<section class="main">
+			<div class="holder">
+				<div class="cart">
+					<div class="cart-content">
+						<div class="title-line">
+							<h2 class="title-min">Savatcha <span>({{ len }} ta  mahsulot bor )</span></h2>
+							<a href="{% url 'delete_all_cart' %}" class="title-link">Hammasini tozalash</a>
+						</div>
+						<div class="cart-table">
+						{% for i in cart %}
+							<div class="cart-item">
+								<div class="cart-item-img"><img src="{% static 'images/media/cart1.jpg' %}" alt=""></div>
+								<div class="cart-item-content">
+									<div class="cart-item-category">{{ i.product.ctg.content }}</div>
+									<div class="cart-item-name"><a href="">{{ i.product.name }}</a></div>
+									<ul class="cart-item-info">
+										<li><b>Material</b> Yumshoq koja</li>
+										<li><b>To'ldirilganlik </b> Paxta </li>
+										<li><b>O'lchamlar (U<span class="cross"></span>K<span class="cross"></span>B)</b> {{ i.product.len }}sm<span class="cross"></span>{{ i.product.width }} sm<span class="cross"></span>{{ i.product.height }} sm</li>
+									</ul>
+									<div class="cart-item-bottom">
+										<div class="cart-item-price">Narxi <b><span id="umumiy_narx">{{ i.umumiy }}</span>{{ i.product.price_type }}</b></div>
+										<div class="quantity-line">
+											<div class="quantity-holder">
+												<a href="" class="minus"></a>
+												<input type="text" id="donalar" class="quantity-input" value="{{ i.dona }}">
+												<a href="" class="plus"></a>
+											</div>
+											<div class="quantity-text">ta.</div>
+										</div>
+									</div>
+									<a href="{% url 'delete_cart' pk=i.id %}" class="cart-item-delete">O'chirish</a>
+								</div>
+							</div>
+			            {% endfor %}
+						</div>
+						<div class="cart-order">
+							<h2 class="title-min">Yetkazib berish</h2>
+							<form action="">
+								<fieldset>
+									<div class="form-line">
+										<label class="form-line-label">Ism</label>
+										<div class="form-line-input">
+											<input type="text" class="input" placeholder="Ismi">
+										</div>
+									</div>
+									<div class="form-line">
+										<label class="form-line-label">Telefon raqami</label>
+										<div class="form-line-input">
+											<input type="text" class="input" placeholder="+998 94 275 56 38">
+										</div>
+									</div>
+									<div class="form-line">
+										<label class="form-line-label">Pochta</label>
+										<div class="form-line-input">
+											<input type="text" class="input" placeholder="Email pochta">
+										</div>
+									</div>
+									<div class="form-line">
+										<label class="form-line-label">yetkazib berish</label>
+										<div class="form-line-input">
+											<div class="radio-list">
+												<div class="radio-item">
+													<input type="radio" name="delivery" class="radio-input" id="d1" checked>
+													<label for="d1" class="radio-label">Uyingizga kurer</label>
+												</div>
+												<div class="radio-item">
+													<input type="radio" name="delivery" class="radio-input" id="d2">
+													<label for="d2" class="radio-label">Olib ketish</label>
+												</div>
+											</div>
+											<input type="text" class="input" placeholder="Manzilga yetkazib berish">
+										</div>
+									</div>
+									<div class="form-button">
+										<button class="button">
+											<span class="button-wrap">Tasdiqlang</span>
+										</button>
+									</div>
+									<div class="form-note">* Buyurtmani tasdiqlash orqali men maxfiylik siyosati shartlariga rozilik bildiraman</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+					<div class="cart-side">
+						<h2 class="title-min">Yetkazib berish <span>(2 ta mahsulot)</span></h2>
+						<div class="checkout-item">Jami tovarlar <b>2</b></div>
+						<div class="checkout-item">Tovar qiymati <b>12 050 $</b></div>
+						<div class="checkout-item">Yetkazib berish <b>2 500 $</b></div>
+						<div class="checkout-total">Jami <b>12 250 $</b></div>
+						<button class="button">
+							<span class="button-wrap">
+								<span class="button-arrow">Ro'yxatdan o'chirilish</span>
+							</span>
+						</button>
+						<div class="checkout-ask">
+							<a href="">Savol berish</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="bottom">
+			<div class="holder">
+				<div class="bottom-block">
+					<div class="bottom-col">
+						<div class="bottom-text">Modelga qaror qilolmayapsizmi?</div>
+						<div class="bottom-title">Biz bilan bog'lanish</div>
+					</div>
+					<div class="bottom-col">
+						<div class="bottom-phone"><a href="tel:+998942755638">998 94 275 56 38</a></div>
+						<div class="bottom-text">Biz har kuni soat 9 <sup>00</sup> dan 20<sup>00</sup> gacha ochiqmiz</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		{% include 'site/partials/footer.html' %}
+	</div>
+<script>
+	function add(value , dona) {
+        documen.innerHtml.getObjectByID("umumiy_narx")
+	};
+	add()
+</script>
+{% endblock %}

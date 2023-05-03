@@ -1,0 +1,182 @@
+{% extends 'site/base.html' %}
+{% block content %}
+
+{% load static %}
+	<div id="wrapper">
+		{% include 'site/partials/header.html' %}
+		<section class="main">
+			<div class="holder">
+				<div class="banner-slider">
+					<div class="banner-slide">
+						<img src="{% static 'images/media/banner.jpg' %}" alt="">
+						<div class="banner-info">
+							<div class="banner-info-block">
+								<div class="banner-name">Eurobook divan "Atlanta"</div>
+								<div class="banner-price"><span>14 000 </span>$</div>
+								<div class="banner-color-text">Boshqa ranglar va o'lchamlarda mavjud</div>
+								<div class="banner-color">
+									<div class="banner-color-item" style="background: #86bbaf"></div>
+									<div class="banner-color-item" style="background: #454a4e"></div>
+									<div class="banner-color-item" style="background: #ffffff"></div>
+								</div>
+								<a href="" class="button button-arrow">
+									<span class="button-wrap">Sotib olish</span>
+								</a>
+							</div>
+						</div>
+						<div class="banner-discount">-34%</div>
+					</div>
+					<div class="banner-slide">
+						<img src="{% static 'images/media/banner.jpg' %}" alt="">
+						<div class="banner-info">
+							<div class="banner-info-block">
+								<div class="banner-name">Eurobook divan "Arctika"</div>
+								<div class="banner-price"><span>6 000</span>$</div>
+								<div class="banner-color-text">Boshqa ranglar va o'lchamlarda mavjud</div>
+								<div class="banner-color">
+									<div class="banner-color-item" style="background: #86bbaf"></div>
+									<div class="banner-color-item" style="background: #454a4e"></div>
+									<div class="banner-color-item" style="background: #ffffff"></div>
+								</div>
+								<a href="" class="button button-arrow">
+									<span class="button-wrap">Sotib olish</span>
+								</a>
+							</div>
+						</div>
+						<div class="banner-discount">-28%</div>
+					</div>
+				</div>
+
+				<div class="product-section">
+
+
+					<h2 class="title">Yangi mavsum</h2>
+					<div class="catalog-slider">
+						{% for i in mebels %}
+							<div class="catalog-item">
+								<div class="catalog-inner">
+									<div class="catalog-icons">
+										<a href="" class="catalog-up"></a>
+										<a href="" class="catalog-fav"></a>
+									</div>
+									<div class="catalog-img">
+										<div class="catalog-img-slide"><a href=""><img src="{% static 'images/media/c1.jpg' %}" alt=""></a></div>
+										<div class="catalog-img-slide"><a href=""><img src="{% static 'images/media/c2.jpg' %}" alt=""></a></div>
+									</div>
+									<div class="catalog-category"><a href="">{{ i.ctg.content }}</a></div>
+									<div class="catalog-name"><a href="">{{ i.name }}</a></div>
+									<div class="catalog-price">{{ i.price }} {{i.price_type }}</div>
+									<div class="catalog-hidden">
+										<div class="catalog-buttons">
+											<a href="" class="button-min">Sotib olish</a>
+											<a href="{% url 'add_cart' pk=i.id url='home' %}" class="button-min button-light">Savatchaga saqlash</a>
+										</div>
+										<div class="catalog-size">
+											<div class="size-title">O'lchamlar</div>
+											<div class="size-line">
+												<div class="size-item">uzunlik <br>{{ i.len }} sm </div>
+												<div class="size-item">Kenglik <br>{{ i.width }} sm</div>
+												<div class="size-item">Balandlik <br>{{ i.height }} sm</div>
+											</div>
+										</div>
+										{% if i.is_bed %}
+										<div class="catalog-size">
+											<div class="size-title">Kengaytirilgan o'lchami </div>
+											<div class="size-line">
+												<div class="size-item">uzunlik <br>{{ i.bed_len }} sm </div>
+												<div class="size-item">Kenglik <br>{{ i.bed_width }} sm</div>
+												<div class="size-item">Balandlik <br>{{ i.bed_height }} sm</div>
+											</div>
+										</div>
+										{% endif %}
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="promo">
+					<h2 class="title">Bestsellerlar</h2>
+					<div class="promo-block">
+						<div class="promo-big">
+							<div class="promo-item">
+								<img src="{% static 'images/media/promo1.jpg' %}" alt="">
+								<div class="promo-info">
+									<div class="promo-category">Eurobook</div>
+									<div class="promo-name"><a href="">Fidji</a></div>
+									<div class="promo-price">5 500 $</div>
+								</div>
+								<div class="catalog-icons">
+									<a href="" class="catalog-up"></a>
+									<a href="" class="catalog-fav"></a>
+								</div>
+							</div>
+						</div>
+						<div class="promo-side">
+							<div class="promo-item">
+								<img src="{% static 'images/media/promo2.jpg' %}" alt="">
+								<div class="promo-info">
+									<div class="promo-category">Asiafors</div>
+									<div class="promo-name"><a href="">Iran</a></div>
+									<div class="promo-price">7 200 $</div>
+								</div>
+								<div class="catalog-icons">
+									<a href="" class="catalog-up"></a>
+									<a href="" class="catalog-fav"></a>
+								</div>
+							</div>
+							<div class="promo-item">
+								<img src="{% static 'images/media/promo3.jpg' %}" alt="">
+								<div class="promo-info">
+									<div class="promo-category">Americano</div>
+									<div class="promo-name"><a href="">Argentin</a></div>
+									<div class="promo-price">8 000 $</div>
+								</div>
+								<div class="catalog-icons">
+									<a href="" class="catalog-up"></a>
+									<a href="" class="catalog-fav"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="main-info">
+					<h2 class="title">Biz raqamlardamiz</h2>
+					<div class="main-info-block">
+						<div class="main-info-item">
+							<div class="main-info-num"><span>20</span> yil</div>
+							<div class="main-info-text">Siz uchun divanlar tayyorlaymiz</div>
+						</div>
+						<div class="main-info-item">
+							<div class="main-info-num"><span>15 000</span> m<sup>2</sup></div>
+							<div class="main-info-text">Ishlab chiqarish maydoni</div>
+						</div>
+						<div class="main-info-item">
+							<div class="main-info-num"><span>&gt;100 000</span></div>
+							<div class="main-info-text">Qoniqarli mijozlar</div>
+						</div>
+					</div>
+				</div>
+				<div class="main-about">
+					<h2 class="title">Biz haqimizda</h2>
+					<div class="about-block">
+						<div class="about-img"><img src="{% static 'images/media/about.jpg' %}" alt=""></div>
+						<div class="about-text">Arzon narxda uslub, qulaylik va sifat - 20 yildan ortiq vaqt davomida biz mebel ishlab chiqaramiz,
+                        bu oddiy haqiqatlarga amal qiladi. Bizning har qanday divanimiz, divanimiz yoki kreslolarimiz,
+                        birinchi navbatda, biz sizning uyingizda qulaylik yaratishimiz kerak, biz faqat nima qilishga harakat qilamiz
+                        biz xohlaymiz. Shu bilan birga, biz mijozlarimizning didi, ehtiyojlarini qadrlaymiz.
+                        va istaklar, shuning uchun har bir mahsulot uchun biz imkon qadar kengroq taklif qilishga tayyormiz
+                        ranglar, matolar, to'qimalarning diapazoni. "Mebel-Ars" zavodi vositachilarsiz ishlaydi.
+						Biz o'zimizning tajribali hunarmandlardan iborat jamoamiz borligidan faxrlanamiz, zamonaviy
+                        uskunalar va yaxshi qurilgan infratuzilma. Ushbu yondashuv bizga taklif qilish imkonini beradi
+                        siz haqiqatan ham yuqori sifatli mebelni o'rtacha narxda. Biz aminmiz
+                        Bizning tajribamiz sizning eng dahshatli umidlaringizni qondirishga yordam beradi.</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+		{% include 'site/partials/footer.html' %}
+	</div>
+
+{% endblock %}

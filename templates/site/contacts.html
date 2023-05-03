@@ -1,0 +1,74 @@
+{% extends 'site/base.html' %}
+{% block content %}
+
+{% load static %}
+	<div id="wrapper">
+		<a href="" class="fixed"><img src="images/paw.svg" alt=""></a>
+		{% include 'site/partials/header.html' %}
+		<section class="main">
+			<div class="holder">
+				<div class="contacts">
+					<div class="contacts-side">
+						<h2 class="title-min">Kontaktlar</h2>
+						<ul class="contacts-list">
+							<li>
+								<div class="contacts-text">Murojaat va buyurtmalar uchun telefon:</div>
+								<div class="contacts-info"><a href="tel:+998942755638">998 (94) 275 56 38</a></div>
+							</li>
+							<li>
+								<div class="contacts-text">Ma'lumot uchun savollar:</div>
+								<div class="contacts-info"><a href="xurramovotabek568@gmail.com">xurramovotabek568@gmail.com</a></div>
+							</li>
+							<li>
+								<div class="contacts-text">Da'volar bo'limi:</div>
+								<div class="contacts-info"><a href="mailto:service@mebel-ars.ru">service@mebel-ars.com</a></div>
+							</li>
+							<li>
+								<div class="contacts-text">Savdo bo'limi:</div>
+								<div class="contacts-info"><a href="mailto:sales@mebel-ars.ru">sales@mebel-ars.com</a></div>
+							</li>
+							<li>
+								<div class="contacts-text">Hamkorlik uchun:</div>
+								<div class="contacts-info"><a href="mailto:director@mebel-ars.ru">director@mebel-ars.com</a></div>
+							</li>
+							<li>
+								<div class="contacts-text">Ish vaqti</div>
+								<div class="contacts-info"> 9<sup>00</sup> dan 21<sup>00</sup></div>
+							</li>
+						</ul>
+					</div>
+					<div class="contacts-form">
+						<h2 class="title-min">Savollar</h2>
+						<form action="">
+							<fieldset>
+								<input type="text" class="input" placeholder="Ism">
+								<input type="text" class="input" placeholder="Telefon raqami">
+								<input type="text" class="input" placeholder="Pochta">
+								<textarea name="" id="" cols="30" rows="10" class="textarea" placeholder="Xabar"></textarea>
+								<button class="button">
+									<span class="button-wrap">Ro'yxatdan o'chirilish</span>
+								</button>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="bottom">
+			<div class="holder">
+				<div class="bottom-block">
+					<div class="bottom-col">
+						<div class="bottom-text">Modelga qaror qilolmayapsizmi?</div>
+						<div class="bottom-title">Biz bilan bog'lanish</div>
+					</div>
+					<div class="bottom-col">
+						<div class="bottom-phone"><a href="tel:+998942755638">998 94 275 56 38</a></div>
+						<div class="bottom-text">Biz har kuni soat  9<sup>00</sup> dan 20<sup>00</sup> gacha ochiqmiz</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		{% include 'site/partials/footer.html' %}
+	</div>
+
+{% endblock %}
